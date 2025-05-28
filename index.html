@@ -1,9 +1,165 @@
-
 <!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resonanzfall – Kapitel 1</title>
-  ...
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: #000;
+      overflow-x: hidden;
+      overflow-y: scroll;
+      font-family: 'Orbitron', sans-serif;
+      scroll-behavior: smooth;
+    }
+    #preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #000;
+      color: #0ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5rem;
+      z-index: 9999;
+      flex-direction: column;
+    }
+    #preloader span {
+      animation: dots 1.5s steps(4, end) infinite;
+    }
+    @keyframes dots {
+      0% { content: ""; }
+      25% { content: "."; }
+      50% { content: ".."; }
+      75% { content: "..."; }
+    }
+    canvas#glitchCanvas {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: -2;
+      width: 100vw;
+      height: 100vh;
+      pointer-events: none;
+    }
+    .terminal {
+      position: relative;
+      top: 100vh;
+      left: 50%;
+      transform: translateX(-50%);
+      background: #111;
+      padding: 2rem;
+      border: 1px solid #0ff;
+      color: #0f0;
+      font-family: monospace;
+      z-index: 1;
+      width: fit-content;
+    }
+    .terminal input {
+      background: black;
+      color: #0f0;
+      border: 1px solid #0ff;
+      font-size: 1rem;
+      padding: 0.5rem;
+      width: 300px;
+    }
+    .shatter {
+      animation: shatter 0.3s forwards;
+    }
+    @keyframes shatter {
+      0% { transform: translateX(-50%) scale(1); opacity: 1; }
+      100% { transform: translateX(-50%) scale(1.1) rotate(3deg); opacity: 0.2; }
+    }
+    section.orbit {
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: rotate(-3deg);
+      animation: orbitScroll 20s infinite linear;
+    }
+    @keyframes orbitScroll {
+      0% { transform: translateY(0) rotate(-3deg); }
+      50% { transform: translateY(-20px) rotate(3deg); }
+      100% { transform: translateY(0) rotate(-3deg); }
+    }
+    .orbit h1 {
+      font-size: 2.5rem;
+      color: #0ff;
+      text-align: center;
+      margin: 0;
+      text-shadow: 0 0 4px #0ff;
+    }
+    .flicker {
+      animation: flicker 2s infinite;
+    }
+    @keyframes flicker {
+      0%, 100% { opacity: 1; text-shadow: 0 0 3px #0ff; }
+      20% { opacity: 0.6; }
+      40% { opacity: 1; }
+      60% { opacity: 0.4; text-shadow: 0 0 5px #f0f; }
+      80% { opacity: 0.9; }
+    }
+  </style>
+</head>
+<body>
+  <div id="preloader">KI-Dekodierung läuft<span id="dots"></span></div>
+  <canvas id="glitchCanvas"></canvas>
+
+  <section class="orbit">
+    <h1 class="flicker">Orbitales Kapitel – Spirale der Erkenntnis</h1>
+  </section>
+
+  <div class="terminal" id="uiTerminal">
+    <label for="cmd">Eingabe:</label>
+    <input id="cmd" type="text" placeholder="z. B. decode: fqv98" onkeydown="checkCommand(event)" />
+  </div>
+
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        document.getElementById('preloader').style.display = 'none';
+      }, 3000);
+    });
+
+    const canvas = document.getElementById('glitchCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    function drawGlitch() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < 15; i++) {
+        const x = Math.random() * canvas.width;
+        const y = Math.random() * canvas.height;
+        const w = canvas.width * (Math.random() * 0.3);
+        const h = Math.random() * 3 + 1;
+        ctx.fillStyle = Math.random() > 0.5 ? '#0ff' : '#f0f';
+        ctx.fillRect(x, y, w, h);
+      }
+    }
+
+    setInterval(drawGlitch, 200);
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+
+    function checkCommand(e) {
+      if (e.key === 'Enter') {
+        const input = e.target.value.trim();
+        const terminal = document.getElementById('uiTerminal');
+        if (input !== 'decode: fqv98') {
+          terminal.classList.add('shatter');
+          setTimeout(() => terminal.classList.remove('shatter'), 400);
+        }
+      }
+    }
+  </script>
+</body>
 </html>
