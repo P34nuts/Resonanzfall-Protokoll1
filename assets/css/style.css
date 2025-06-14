@@ -1,0 +1,27 @@
+
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;background:#0b0d10;color:#e0e0e0;line-height:1.6;padding-top:70px;}
+a{color:#ff4655;text-decoration:none;}
+.btn{padding:0.6rem 1.2rem;margin:0.3rem;background:#ff4655;color:#fff;border:none;border-radius:4px;cursor:pointer;}
+.btn.ghost{background:transparent;border:1px solid #ff4655;color:#ff4655;}
+.container{width:90%;max-width:1200px;margin:auto;}
+.section{padding:60px 0;}
+.section.alt{background:#13161d;}
+.logo{color:#fff;font-size:1.5rem;font-family:'Russo One',sans-serif;}
+header{position:fixed;top:0;width:100%;background:#000a;backdrop-filter:blur(6px);z-index:999;}
+header .container{display:flex;justify-content:space-between;align-items:center;padding:0.8rem 0;}
+#nav ul{display:flex;gap:1rem;list-style:none;}
+#nav ul li a{color:#fff;font-weight:600;}
+#burger{display:none;color:#fff;font-size:1.8rem;}
+.hero{height:80vh;background:url('img/alienworld.png') center/cover no-repeat;display:flex;align-items:center;justify-content:center;text-align:center;}
+.hero .claim{margin:1rem 0;}
+.book-flex{display:flex;flex-wrap:wrap;gap:2rem;align-items:center;}
+.cover{max-width:260px;border:3px solid #ff4655;border-radius:4px;}
+.gallery-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem;}
+.gallery-item img{width:100%;border-radius:4px;}
+details{background:#0f1117;margin:0.5rem 0;padding:0.8rem;border-left:3px solid #ff4655;border-radius:4px;}
+details summary{cursor:pointer;font-weight:600;}
+.contact-form, #guestbook-form{display:flex;flex-direction:column;gap:0.6rem;}
+input,textarea{padding:0.6rem;border-radius:4px;border:none;background:#0b0d10;color:#e0e0e0;}
+.footer{background:#07090d;text-align:center;padding:1.5rem 0;font-size:0.9rem;}
+@media(max-width:768px){#nav ul{flex-direction:column;display:none;background:#000;position:absolute;right:1rem;top:60px;padding:1rem;border-radius:4px;}#nav ul.show{display:block;}#burger{display:block;} .book-flex{flex-direction:column;}}

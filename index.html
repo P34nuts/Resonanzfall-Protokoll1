@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Frank Horn – Sci‑Fi Autor</title>
+<link rel="stylesheet" href="assets/css/style.css" />
+<link href="https://fonts.googleapis.com/css2?family=Russo+One&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.159.0/three.min.js"></script>
+</head>
+<body>
+<header id="header">
+  <div class="container">
+    <h1 class="logo">Frank&nbsp;Horn</h1>
+    <nav id="nav">
+      <ul>
+        <li><a href="#home">Home</a></li><li><a href="#about">Autor</a></li>
+        <li><a href="#book">Buch</a></li><li><a href="#chapters">Kapitel</a></li>
+        <li><a href="#map">Sternenkarte</a></li><li><a href="#frequency">Frequenz</a></li>
+        <li><a href="#dossier">Dossier</a></li><li><a href="#gallery">Galerie</a></li>
+        <li><a href="#community">Leser</a></li><li><a href="#contact">Kontakt</a></li>
+      </ul>
+      <div id="burger">&#9776;</div>
+    </nav>
+    <div id="lang-switch"><button id="lang-btn">EN</button></div>
+  </div>
+</header>
+
+<section id="home" class="hero">
+  <div class="hero-inner"><h2 class="book-title">Resonanzfall – Protokoll&nbsp;I</h2>
+    <p class="claim">Die letzte Frequenz der Menschheit.</p>
+    <a class="btn" href="#book">Jetzt entdecken</a></div>
+</section>
+
+<section id="about" class="section"><div class="container"><h2>Über den Autor</h2>
+<p><strong>Frank Horn</strong> (DE/EN Umschalter oben) – Ingenieur für Nachrichtentechnik, Forscher in adaptiven Funknetzen, liefert nüchterne Hard‑Science‑Fiction mit moralischen Dilemmata. Sein technischer Alltag fließt direkt in seine Romane.</p></div></section>
+
+<section id="book" class="section alt"><div class="container book-flex">
+<img src="img/cover-placeholder.jpg" class="cover" alt="Cover"/><div class="book-details">
+<h2>Das Buch</h2><p>Ein todbringendes Signal trifft auf eine utopische Alienwelt. Jedes Kapitel zeigt die Eskalation – bis die Flotte zur Quelle startet: der Erde.</p>
+<ul class="book-meta"><li>Genre: Hard‑Sci‑Fi Thriller</li><li>Umfang: 110 000 Wörter</li></ul>
+<div class="buttons"><a class="btn" href="https://www.amazon.de/dp/B0FBKNHTCJ" target="_blank">Amazon</a>
+<a class="btn ghost" href="https://www.lovelybooks.de/autor/Frank-Horn/Resonanzfall-Protokoll-I-Die-letzte-Frequenz-der-Menschheit-19649075249-w/" target="_blank">LovelyBooks</a></div>
+</div></div></section>
+
+<section id="chapters" class="section"><div class="container"><h2>Kapitelübersicht</h2>
+<details><summary>Kapitel 1 – Umwelt &amp; Ökosystem</summary><p>Perfekte Biosphäre, erste Messabweichungen.</p></details>
+<details><summary>Kapitel 2 – Tiere, Pflanzen &amp; Gleichgewicht</summary><p>Sensornetze reagieren irrational.</p></details>
+<details><summary>Kapitel 3 – Raumfahrt &amp; Energie</summary><p>Bau der supraleitenden Dyson‑Brücke.</p></details>
+</div></section>
+
+<!-- 1 Interaktive Sternenkarte -->
+<section id="map" class="section alt"><div class="container"><h2>Interaktive Sternenkarte</h2>
+<canvas id="starCanvas" style="width:100%;height:400px;background:#000;"></canvas></div></section>
+
+<!-- 2 Frequenzsimulator -->
+<section id="frequency" class="section"><div class="container"><h2>Frequenz‑Simulator</h2>
+<input type="range" id="freqSlider" min="30" max="3000" value="440"/><span id="freqVal">440</span> Hz
+<button class="btn" id="playTone">Play</button><button class="btn ghost" id="stopTone">Stop</button></div></section>
+
+<!-- 3 KI‑Chat Dummy -->
+<section id="ai" class="section alt"><div class="container"><h2>Frag die Frequenz‑KI</h2>
+<input type="text" id="aiQuestion" placeholder="Deine Frage"/><button class="btn" id="askAI">Fragen</button><p id="aiReply"></p></div></section>
+
+<!-- 4 Cinematic Trailer -->
+<section id="trailer" class="section"><div class="container"><h2>Cinematic Teaser</h2>
+<video controls width="100%" src="trailer.mp4" poster="img/fleet.png">Your browser does not support video.</video></div></section>
+
+<!-- 5 Herzschlag/Stille -->
+<section id="heartbeat" class="section alt"><div class="container"><h2>Resonanz‑Moment</h2>
+<button class="btn" id="triggerHeart">Erleben</button><audio id="heartAudio" src="heartbeat.mp3"></audio></div></section>
+
+<!-- 6 Dossier -->
+<section id="dossier" class="section"><div class="container"><h2>Buch‑Dossier</h2>
+<a href="dossier.pdf" class="btn">PDF herunterladen</a></div></section>
+
+<!-- 7 Glossar -->
+<section id="glossary" class="section alt"><div class="container"><h2>Glossar</h2>
+<details><summary>Resonanzfeld</summary><p>Frequenz‑basierte Störung, die organische &amp; technologische Systeme destabilisiert.</p></details>
+<details><summary>Flotte Null</summary><p>Erste interstellare Expeditionsflotte des Alienvolks.</p></details></div></section>
+
+<!-- 8 Fortsetzungsanzeige -->
+<section id="sequel" class="section"><div class="container"><h2>Band II – Frequenzquelle (2026)</h2><progress value="30" max="100"></progress> 30&nbsp;% fertig</div></section>
+
+<!-- 9 Leseprobe (HTML) -->
+<section id="sample" class="section alt"><div class="container"><h2>Leseprobe &ndash; Kapitel 1</h2><p>Die Atmosphäre war optisch rein … <em>(gekürzt)</em></p></div></section>
+
+<!-- 10 Sprachumschalter Hinweis -->
+<!-- handled by JS -->
+
+<!-- 11 Newsletter -->
+<section id="newsletter" class="section"><div class="container"><h2>Newsletter</h2>
+<form action="https://example.us21.list-manage.com/subscribe/post" method="POST">
+<input type="email" name="EMAIL" placeholder="Deine E‑Mail" required><button class="btn">Abonnieren</button></form></div></section>
+
+<!-- 12 Leser‑Stimmen Slider -->
+<section id="reviews" class="section alt"><div class="container"><h2>Leser‑Stimmen</h2>
+<div id="reviewSlider"><blockquote>„Packend bis zur letzten Seite!“ &ndash; Leser&nbsp;A</blockquote></div></div></section>
+
+<!-- 13 Bewertungsskala -->
+<section id="rating" class="section"><div class="container"><h2>Bewerte das Buch</h2>
+<input type="number" id="ratingInput" min="1" max="5" placeholder="1-5"><button class="btn" id="submitRating">Senden</button>
+<p id="avgRating">Ø&nbsp;?/?</p></div></section>
+
+<!-- 14 Direktshop -->
+<section id="shop" class="section alt"><div class="container"><h2>Signiertes Print‑Exemplar</h2>
+<a class="btn" href="https://payhip.com/b/EXAMPLE" target="_blank">Jetzt bestellen</a></div></section>
+
+<!-- 15 Live‑Lesung Video -->
+<section id="live" class="section"><div class="container"><h2>Live‑Lesung</h2>
+<iframe width="100%" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Live-Lesung" frameborder="0" allowfullscreen></iframe></div></section>
+
+<!-- Galerie -->
+<section id="gallery" class="section alt"><div class="container"><h2>Galerie</h2><div class="gallery-grid">
+<div class="gallery-item"><img src="img/alienworld.png" alt="Galeriebild" /></div>
+<div class="gallery-item"><img src="img/fleet.png" alt="Galeriebild" /></div>
+<div class="gallery-item"><img src="img/cityship.png" alt="Galeriebild" /></div>
+<div class="gallery-item"><img src="img/destroyedplanet.png" alt="Galeriebild" /></div>
+<div class="gallery-item"><img src="img/perfectplanet.jpg" alt="Galeriebild" /></div>
+<div class="gallery-item"><img src="img/controlroom.jpg" alt="Galeriebild" /></div>
+</div></div></section>
+
+<!-- Gästebuch -->
+<section id="community" class="section"><div class="container"><h2>Gästebuch</h2>
+<form id="guestbook-form"><input type="text" id="guest-name" placeholder="Name" required>
+<textarea id="guest-message" placeholder="Nachricht" required></textarea><button class="btn">Eintragen</button></form>
+<div id="guestbook-entries"></div></div></section>
+
+<!-- Kontakt -->
+<section id="contact" class="section alt"><div class="container"><h2>Kontakt</h2>
+<form action="mailto:frank.horn@mail.de" method="POST" enctype="text/plain" class="contact-form">
+<input type="text" name="name" placeholder="Name" required>
+<input type="email" name="email" placeholder="E‑Mail" required>
+<textarea name="message" placeholder="Nachricht" required></textarea>
+<button type="submit" class="btn">Senden</button></form></div></section>
+
+<footer class="footer"><div class="container"><p>&copy; 2025 Frank Horn</p></div></footer>
+<script src="assets/js/script.js"></script>
+</body>
+</html>
